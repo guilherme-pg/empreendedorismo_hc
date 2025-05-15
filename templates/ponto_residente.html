@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ponto</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Ponto</title>
+  <link rel="stylesheet" href="../static/css/ponto_residente.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <h1>Ponto</h1>
+  <header class="header">
+    <h1>Registro de Ponto</h1>
+  </header>
+
+  <section class="perfil">
+    <div class="info">
+      <h2>Dr. Ana Silva</h2>
+      <p>Residente – Clínica Médica</p>
+      <p>Hospital Universitário<br>Unidade Central</p>
+    </div>
+    <div class="id-info">
+      <p>ID: 23456</p>
+      <p>Turno: Diurno</p>
+    </div>
+  </section>
+
+  <section class="registro-central">
+    <p class="data">Segunda-feira, 15 de Abril de 2024</p>
+    <h1 class="relogio">00:00:00</h1>
+    <div class="registro-botao">
+      <img src="fingerprint-icon.svg" alt="Registrar" />
+      <p>Toque para registrar entrada</p>
+    </div>
+  </section>
+
+  <section class="registros">
+    <h3>Registros Recentes</h3>
+    <div class="registro-item">
+      <strong>Entrada</strong>
+      <p>Hoje, 07:15</p>
+    </div>
+    <div class="registro-item">
+      <strong>Saída</strong>
+      <p>Ontem, 10:45</p>
+    </div>
+    <div class="registro-item">
+      <strong>Entrada</strong>
+      <p>—</p>
+    </div>
+  </section>
 </body>
 </html>

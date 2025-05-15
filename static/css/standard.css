@@ -1,0 +1,64 @@
+/* base.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f7;
+  padding: 0 16px;
+  color: #333;
+}
+
+header, .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+header h1, .header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .id-info {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .registros-conteudo {
+    flex-direction: column;
+  }
+}

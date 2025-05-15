@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReCon - Hospital das Clínicas UFPE</title>
+  <link rel="stylesheet" href="../static/css/home_login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+
+
+    <section class="left">
+      <img src="logo-hc.png" alt="Hospital das Clínicas UFPE" class="logo" />
+      <h1>Bem-vindo(a) ao <strong>ReCon – Registro e Controle de Residentes</strong></h1>
+      <p>Esta é a plataforma oficial de ponto do Hospital das Clínicas.<br>
+        Residentes, professores e gestores podem registrar e acompanhar suas atividades de forma prática e segura.<br>
+        Estamos felizes em ter você aqui. Boa jornada!</p>
+      <p class="ajuda">Central de ajuda ao residente.</p>
+      <div class="icons">
+        <img src="sus.png" alt="SUS" />
+        <img src="ufpe.png" alt="UFPE" />
+        <img src="ebserh.png" alt="EBSERH" />
+      </div>
+    </section>
+
+
+    <section class="right">
+      <div class="login-box">
+        <img src="recon-logo.png" alt="ReCon logo" class="recon-logo" />
+
+        <form action="/login_form" method="POST">
+          <div class="input-group">
+            <span class="icon">👤</span>
+            <input type="text" placeholder="Matrícula" required />
+          </div>
+          <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" placeholder="Senha" required />
+          </div>
+
+          <div class="role-selector">
+            <label><input type="radio" name="role" value="residente" required> Residente</label>
+            <label><input type="radio" name="role" value="professor"> Professor</label>
+            <label><input type="radio" name="role" value="gestor"> Gestor</label>
+          </div>
+
+          <button type="submit">Entrar</button>
+        </form>
+
+        <p class="forgot-password">Esqueceu a senha? <a href="#">Clique aqui.</a></p>
+      </div>
+      <img src="banner-hc.png" alt="Banner Hospital" class="banner" />
+    </section>
+  </div>
+</body>
+</html>

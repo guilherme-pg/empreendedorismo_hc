@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request
 
 
@@ -6,16 +5,22 @@ app = Flask(__name__)
 
 
 @app.route("/",  methods=['GET'])
-def home():
-    return render_template("home.html")
+def home_login():
+    return render_template("home_login.html")
 
 
 @app.route("/login_form", methods=['POST'])
 def login_form():
+    role = request.form.get("role")
 
-    # return render_template("comparison.html", rendering=metrics)
-    # return render_template("home_professor.html")
-    return render_template("home_residente.html")
+    if role == "residente":
+        return render_template("home_residente.html")
+    elif role == "professor":
+        return render_template("home_professor.html")
+    elif role == "gestor":
+        return render_template("home_gestor.html")
+    else:
+        return "Seleção inválida", 400
 
 
 @app.route("/home_residente",  methods=['GET'])

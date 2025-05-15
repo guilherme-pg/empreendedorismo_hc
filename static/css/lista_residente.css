@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f7;
+  padding: 0 16px;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.perfil {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.perfil .info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.id-info {
+  text-align: right;
+  min-width: 120px;
+}
+
+.residents-list {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.residents-list .data {
+  text-align: center;
+  margin-bottom: 16px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-weight: bold;
+  background-color: #f8f8f8;
+}
+
+.registros {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.registros-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.registros-header h3 {
+  font-size: 1rem;
+}
+
+.registros-header a {
+  font-size: 0.9rem;
+  color: #0a66c2;
+  text-decoration: none;
+}
+
+.registros-conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.registro {
+  flex: 1;
+  min-width: 200px;
+}
+
+.registro p {
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .id-info {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .registros-conteudo {
+    flex-direction: column;
+  }
+}

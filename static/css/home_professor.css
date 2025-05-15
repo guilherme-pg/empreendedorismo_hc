@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+  padding: 0 16px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icons img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.sair-btn {
+  background: #a93226;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.perfil .info h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.perfil .id-info {
+  text-align: right;
+}
+
+.acoes {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 24px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.acao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  padding: 10px;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.acao:hover {
+  background: #f0f0f0;
+}
+
+.acao img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.registros {
+  background: white;
+  margin-top: 24px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.titulo-registros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.historico {
+  color: #0b61a4;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.tabela {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.registro {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  flex: 1 1 180px;
+  min-width: 150px;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .acoes {
+    justify-content: center;
+  }
+
+  .perfil {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .perfil .id-info {
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .icons {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}

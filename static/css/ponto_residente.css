@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f4f8;
+  color: #333;
+  padding: 0 16px;
+}
+
+.header {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.perfil {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+}
+
+.perfil .info h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.perfil .id-info {
+  text-align: right;
+  min-width: 120px;
+}
+
+.registro-central {
+  background: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.data {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.relogio {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.registro-botao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.registro-botao img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.registro-botao p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.registros {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.registros h3 {
+  margin-bottom: 16px;
+  font-size: 1rem;
+}
+
+.registro-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.registro-item:last-child {
+  border-bottom: none;
+}
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .perfil .id-info {
+    text-align: left;
+    margin-top: 10px;
+  }
+}

@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Professor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal do Professor</title>
+  <link rel="stylesheet" href="../static/css/home_professor.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Home Professor</h1>
+  <header class="topbar">
+    <h1>Portal do Professor</h1>
+    <div class="icons">
+      <img src="notificacao-icon.svg" alt="Notificação" />
+      <img src="ajuda-icon.svg" alt="Ajuda" />
+      <form action="/" method="get">
+        <button type="submit" class="sair-btn">Sair</button>
+      </form>
+    </div>
+  </header>
+
+  <section class="perfil">
+    <div class="info">
+      <h2>Professor Dr. Fúvio Sherpack</h2>
+      <p>Cirurgia Cardiovascular</p>
+      <p>Hospital das Clínicas<br/>UTI Coronária</p>
+    </div>
+    <div class="id-info">
+      <p>ID: 03223</p>
+      <p>Turno: Diurno</p>
+    </div>
+  </section>
+
+  <section class="acoes">
+    <div class="acao">
+      <img src="rotina-icon.svg" alt="Rotina Semanal" />
+      <span>Rotina Semanal</span>
+    </div>
+    <a href="{{ url_for('avisos') }}">
+      <div class="acao">
+        <img src="aviso-icon.svg" alt="Avisos" />
+        <span>Avisos</span>
+      </div>
+    </a>
+    <div class="acao">
+      <img src="lancar-icon.svg" alt="Lançar Notas" />
+      <span>Lançar notas</span>
+    </div>
+     <a href="{{ url_for('lista_residentes') }}">
+      <div class="acao">
+        <img src="residentes-icon.svg" alt="Lista de Residentes" />
+        <span>Lista de Residentes</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="registros">
+    <div class="titulo-registros">
+      <h3>Registros recentes de residentes</h3>
+      <a href="#" class="historico">Visualizar Histórico</a>
+    </div>
+    <div class="tabela">
+      <div class="registro">
+        <p><strong>18/04/2025</strong><br>Dr. Claudio Monteiro<br>Entrada: 07:00<br>Saída: 11:10<br>Entrada: 12:10<br>Saída: 17:00</p>
+      </div>
+      <div class="registro">
+        <p><strong>18/04/2025</strong><br>Dra. Carla Silva<br>Entrada: 07:20<br>Saída: 11:30<br>Entrada: 12:30<br>Saída: 17:40</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Residentes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Residentes</title>
+  <link rel="stylesheet" href="../static/css/lista_residente.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
+  <header class="header">
+    <a href="{{ url_for('home_professor') }}">
+      <div class="header-left">
+        <img src="home-icon.svg" alt="Início" class="icon"/>
+        <span>Início</span>
+      </div>
+    </a>
     <h1>Lista de Residentes</h1>
+    <div class="header-right">
+      <img src="note-icon.svg" alt="Notas" class="icon"/>
+      <img src="bell-icon.svg" alt="Avisos" class="icon"/>
+    </div>
+  </header>
+
+  <section class="perfil">
+    <div class="info">
+      <h2>Professor Dr. Fúvio Sherpack</h2>
+      <p>Cirurgião Cardiovascular</p>
+      <p>Hospital das Clínicas<br>UTI Coronária</p>
+    </div>
+    <div class="id-info">
+      <p>ID: 03223</p>
+      <p>Turno: Diurno</p>
+    </div>
+  </section>
+
+  <section class="residents-list">
+    <p class="data">Segunda-feira, 21 de Abril de 2025</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome do Residente</th>
+          <th>Especialidade</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dr. Claudio Monteiro</td>
+          <td>Cirurgia Cardiovascular</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Dra. Carla Silva</td>
+          <td>Cirurgia Cardiovascular</td>
+          <td>Ativo</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="registros">
+    <div class="registros-header">
+      <h3>Registros recentes de residentes</h3>
+      <a href="#">Visualizar Histórico</a>
+    </div>
+    <div class="registros-conteudo">
+      <div class="registro">
+        <strong>18/04/2025<br>Dr. Claudio Monteiro</strong>
+        <p>Entrada: 07:00<br>Saída: 11:10<br>Entrada: 12:10<br>Saída: 17:00</p>
+      </div>
+      <div class="registro">
+        <strong>18/04/2025<br>Dra. Carla Silva</strong>
+        <p>Entrada: 07:20<br>Saída: 11:30<br>Entrada: 12:30<br>Saída: 17:40</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
