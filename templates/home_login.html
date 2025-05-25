@@ -12,6 +12,9 @@
   <div class="container">
 
 
+    
+
+
     <section class="left">
       <img src="logo-hc.png" alt="Hospital das Clínicas UFPE" class="logo" />
       <h1>Bem-vindo(a) ao <strong>ReCon – Registro e Controle de Residentes</strong></h1>
@@ -42,10 +45,20 @@
           </div>
 
           <div class="role-selector">
+            <!-- <label for="role">Selecione seu papel:</label> -->
+            <select name="role" id="role" required>
+              <option value="" disabled selected>Escolha uma opção</option>
+              <option value="residente">Residente</option>
+              <option value="professor">Professor</option>
+              <option value="gestor">Gestor</option>
+            </select>
+          </div>
+
+          <!-- <div class="role-selector">
             <label><input type="radio" name="role" value="residente" required> Residente</label>
             <label><input type="radio" name="role" value="professor"> Professor</label>
             <label><input type="radio" name="role" value="gestor"> Gestor</label>
-          </div>
+          </div> -->
 
           <button type="submit">Entrar</button>
         </form>
@@ -54,6 +67,9 @@
       </div>
       <img src="banner-hc.png" alt="Banner Hospital" class="banner" />
     </section>
+
+
+    
   </div>
 </body>
 </html>
