@@ -33,9 +33,12 @@ body {
   text-align: left;
 }
 
-.left .logo {
-  width: 120px;
+.left .hclogo {
+  width: 200px;
   margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .left h1 {
@@ -138,11 +141,16 @@ button:hover {
   text-decoration: none;
 }
 
-.banner {
+.banner-logo {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
+  height: auto;
   margin-top: 30px;
-  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  filter: grayscale(0.2); /* Leve estilização visual opcional */
+  opacity: 0.9;
 }
 
 .role-selector {
