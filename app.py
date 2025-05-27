@@ -1,26 +1,27 @@
 from flask import Flask, render_template, request
-
+from auth import autenticar_usuario
 
 app = Flask(__name__)
 
-
-@app.route("/",  methods=['GET'])
+@app.route("/", methods=['GET'])
 def home_login():
     return render_template("home_login.html")
 
-
 @app.route("/login_form", methods=['POST'])
 def login_form():
+    usuario = request.form.get("usuario")
+    senha = request.form.get("senha")
     role = request.form.get("role")
 
-    if role == "residente":
-        return render_template("home_residente.html")
-    elif role == "professor":
-        return render_template("home_professor.html")
-    elif role == "gestor":
-        return render_template("home_gestor.html")
-    else:
-        return "Seleção inválida", 400
+    if autenticar_usuario(usuario, senha, role):
+        if role == "residente":
+            return render_template("home_residente.html")
+        elif role == "professor":
+            return render_template("home_professor.html")
+        elif role == "gestor":
+            return render_template("home_gestor.html")
+    return "Verifique suas credenciais!", 401
+
 
 
 @app.route("/home_residente",  methods=['GET'])

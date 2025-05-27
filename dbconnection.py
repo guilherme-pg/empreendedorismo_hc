@@ -6,3 +6,4 @@ MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 
 client = MongoClient(MONGO_URI)
 db = client["meu_banco_de_dados"]
+usuarios = db["usuarios"]
