@@ -25,14 +25,14 @@ Equipe:
 🔧 Instalação e Execução
 Clone este repositório:
 ```
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/guilherme-pg/empreendedorismo_hc.git
 cd seu-repositorio
 ```
 
 🔧 Instale as dependências:
 
 ```
-pip install -r requirements.txt
+pip install flask
 ```
 
 Crie um arquivo .env com as configurações necessárias (exemplo em .env.example).
