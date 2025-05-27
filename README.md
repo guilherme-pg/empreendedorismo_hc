@@ -35,7 +35,7 @@ cd seu-repositorio
 pip install flask
 ```
 
-Crie um arquivo .env com as configurações necessárias (exemplo em .env.example).
+Crie um arquivo .env com as configurações necessárias.
 
 🔧 Execute a aplicação:
 
