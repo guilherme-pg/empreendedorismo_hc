@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../static/css/home_login.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- SweetAlert2 CSS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <div class="container">
@@ -30,15 +32,14 @@
         <form action="/login_form" method="POST">
           <div class="input-group">
             <span class="icon">👤</span>
-            <input type="text" id="usuario" placeholder="Matrícula" required />
+            <input type="text" id="usuario" name="usuario" placeholder="Matrícula" required />
           </div>
           <div class="input-group">
             <span class="icon">🔒</span>
-            <input type="password" id="senha" placeholder="Senha" required />
+            <input type="password" id="senha" name="senha" placeholder="Senha" required />
           </div>
 
           <div class="role-selector">
-            <!-- <label for="role">Selecione seu papel:</label> -->
             <select name="role" id="role" required>
               <option value="" disabled selected>Escolha uma opção</option>
               <option value="residente">Residente</option>
@@ -46,12 +47,6 @@
               <option value="gestor">Gestor</option>
             </select>
           </div>
-
-          <!-- <div class="role-selector">
-            <label><input type="radio" name="role" value="residente" required> Residente</label>
-            <label><input type="radio" name="role" value="professor"> Professor</label>
-            <label><input type="radio" name="role" value="gestor"> Gestor</label>
-          </div> -->
 
           <button type="submit">Entrar</button>
         </form>
@@ -61,5 +56,18 @@
     </section>
     
   </div>
+
+  <script>
+    // Verificar se há uma mensagem de erro passada pelo Flask
+    {% if error_message %}
+      // Exibir o alerta usando SweetAlert
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro de Autenticação',
+        text: '{{ error_message }}'
+      });
+    {% endif %}
+  </script>
+
 </body>
 </html>
