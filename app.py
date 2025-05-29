@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from auth import autenticar_usuario
 
 app = Flask(__name__)
@@ -20,7 +20,8 @@ def login_form():
             return render_template("home_professor.html")
         elif role == "gestor":
             return render_template("home_gestor.html")
-    return "Verifique suas credenciais!", 401
+    # Caso falhe a autenticação, renderiza novamente a página de login e passa a mensagem de erro
+    return render_template("home_login.html", error_message="Verifique suas credenciais!")
 
 
 
