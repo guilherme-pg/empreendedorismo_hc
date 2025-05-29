@@ -33,7 +33,7 @@ cd seu-repositorio
 🔧 Instale as dependências:
 
 ```
-pip install flask
+pip install -r requirements.txt
 ```
 
 Crie um arquivo .env com as configurações necessárias.
