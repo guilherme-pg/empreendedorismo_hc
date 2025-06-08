@@ -1,3 +1,5 @@
+/* base.css - Estilos reutilizáveis para todas as páginas */
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -53,10 +55,7 @@ body {
   font-size: 22px;
 }
 
-.perfil .info p {
-  margin: 4px 0;
-}
-
+.perfil .info p,
 .id-info p {
   margin: 4px 0;
   font-weight: bold;

@@ -1,9 +1,13 @@
 from pymongo import MongoClient
 import os
 
-# URL do MongoDB (local ou Atlas)
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+MONGO_URI = os.getenv("MONGO_URI") 
+DB_NAME = os.getenv("DB_NAME")
 
-client = MongoClient(MONGO_URI)
-db = client["meu_banco_de_dados"]
-usuarios = db["usuarios"]
+try:
+    client = MongoClient(MONGO_URI)
+    db = client[DB_NAME]
+    usuarios = db["usuarios"]
+    print("Conexão com MongoDB estabelecida com sucesso!")
+except Exception as e:
+    print(f"Erro ao conectar ao MongoDB: {e}")

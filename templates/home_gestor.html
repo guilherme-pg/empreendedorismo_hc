@@ -1,19 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/home_gestor.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Gestor</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portal do Gestor</title>
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
-    <h1>HOME GESTOR</h1>
+  <header class="topbar">
+    <h1>Portal do Gestor</h1>
+    <div class="icons">
+      <img src="../static/images/icons/bell-icon.svg" alt="Notificações" />
+      <img src="../static/images/icons/help-icon.svg" alt="Ajuda" />
+      <form action="/" method="get">
+        <button type="submit" class="sair-btn">Sair</button>
+      </form>
+    </div>
+  </header>
+
+  <section class="perfil">
+    <div class="info">
+      <h2>Gestor João Batista</h2>
+      <p>Coordenação Geral</p>
+      <p>Hospital das Clínicas<br/>Administração Central</p>
+    </div>
+    <div class="id-info">
+      <p>ID: 00001</p>
+      <p>Turno: Integral</p>
+    </div>
+  </section>
+
+  <section class="acoes">
+    <a href="lista_residentes.html">
+      <div class="acao">
+        <img src="../static/images/icons/list.png" alt="Lista de Residentes" />
+        <span>Lista de Residentes</span>
+      </div>
+    </a>
+    <a href="#">
+      <div class="acao">
+        <img src="../static/images/icons/schedule.png" alt="Relatórios" />
+        <span>Relatórios</span>
+      </div>
+    </a>
+    <a href="#">
+      <div class="acao">
+        <img src="../static/images/icons/doorbell.png" alt="Avisos" />
+        <span>Gerenciar Avisos</span>
+      </div>
+    </a>
+    <a href="#">
+      <div class="acao">
+        <img src="../static/images/icons/passfail.png" alt="Notas" />
+        <span>Desempenho</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="registros">
+    <div class="titulo-registros">
+      <h3>Últimos registros de residentes</h3>
+      <a href="#" class="historico">Ver todos</a>
+    </div>
+    <div class="tabela">
+      <div class="registro">
+        <p><strong>18/04/2025</strong><br>Dr. Claudio Monteiro<br>Entrada: 07:00<br>Saída: 11:10</p>
+      </div>
+      <div class="registro">
+        <p><strong>18/04/2025</strong><br>Dra. Carla Silva<br>Entrada: 07:15<br>Saída: 11:20</p>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

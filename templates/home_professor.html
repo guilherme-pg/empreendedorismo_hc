@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portal do Professor</title>
-  <link rel="stylesheet" href="../static/css/home_professor.css" />
+  <link rel="stylesheet" href="../static/css/base.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -33,23 +33,25 @@
   </section>
 
   <section class="acoes">
-    <div class="acao">
-      <img src="rotina-icon.svg" alt="Rotina Semanal" />
-      <span>Rotina Semanal</span>
-    </div>
-    <a href="{{ url_for('avisos') }}">
+    <a href="">
       <div class="acao">
-        <img src="aviso-icon.svg" alt="Avisos" />
+        <img src="../static/images/icons/calendar.png" alt="Rotina Semanal" />
+        <span>Rotina Semanal</span>
+      </div>
+    <a href="">
+      <div class="acao">
+        <img src="../static/images/icons/doorbell.png" alt="Avisos" />
         <span>Avisos</span>
       </div>
-    </a>
-    <div class="acao">
-      <img src="lancar-icon.svg" alt="Lançar Notas" />
-      <span>Lançar notas</span>
-    </div>
-     <a href="{{ url_for('lista_residentes') }}">
+    </a href="">
       <div class="acao">
-        <img src="residentes-icon.svg" alt="Lista de Residentes" />
+        <img src="../static/images/icons/passfail.png" alt="Lançar Notas" />
+        <span>Lançar Notas</span>
+      </div>
+    </a>
+     <a href="">
+      <div class="acao">
+        <img src="../static/images/icons/list.png" alt="Lançar Notas" />
         <span>Lista de Residentes</span>
       </div>
     </a>
