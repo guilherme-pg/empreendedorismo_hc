@@ -4,30 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ReCon - Hospital das Clínicas UFPE</title>
-  <link rel="stylesheet" href="../static/css/home_login.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home_login.css') }}" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- SweetAlert2 CSS -->
+  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
+<body data-error-message="{{ error_message | safe }}">
   <div class="container">
 
     <section class="left">
-      <img src="../static/images/icons/HClogo.png" alt="Hospital das Clínicas UFPE" class="hclogo" />
+      <img src="{{ url_for('static', filename='images/icons/HClogo.png') }}" alt="Hospital das Clínicas UFPE" class="hclogo" />
       <h1>Bem-vindo(a) ao <strong>ReCon – Registro e Controle de Residentes</strong></h1>
       <p>Esta é a plataforma oficial de ponto do Hospital das Clínicas.<br>
         Residentes, professores e gestores podem registrar e acompanhar suas atividades de forma prática e segura.<br>
         Estamos felizes em ter você aqui. Boa jornada!</p>
       <p class="ajuda">Central de ajuda ao residente.</p>
       <div>
-        <img src="../static/images/icons/banner.png" alt="banner" class="banner-logo"/>
+        <img src="{{ url_for('static', filename='images/icons/banner.png') }}" alt="banner" class="banner-logo" />
       </div>
     </section>
 
     <section class="right">
       <div class="login-box">
-        <img src="../static/images/icons/recon.png" alt="ReCon logo" class="recon-logo" />
+        <img src="{{ url_for('static', filename='images/icons/recon.png') }}" alt="ReCon logo" class="recon-logo" />
 
         <form action="/login_form" method="POST">
           <div class="input-group">
@@ -54,20 +54,8 @@
         <p class="forgot-password">Esqueceu a senha? <a href="#">Clique aqui.</a></p>
       </div>
     </section>
-    
   </div>
 
-  <script>
-    // Verificar se há uma mensagem de erro passada pelo Flask
-    {% if error_message %}
-      // Exibir o alerta usando SweetAlert
-      Swal.fire({
-        icon: 'error',
-        title: 'Erro de Autenticação',
-        text: '{{ error_message }}'
-      });
-    {% endif %}
-  </script>
-
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
