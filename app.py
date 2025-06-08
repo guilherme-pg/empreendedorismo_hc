@@ -13,7 +13,7 @@ app.config.from_object(Config)
 def home_login():
     return render_template("home_login.html")
 
-@app.route("/login_form", methods=['POST'])
+@app.route("/home", methods=['POST'])
 def login_form():
     usuario = request.form.get("usuario")
     senha = request.form.get("senha")
