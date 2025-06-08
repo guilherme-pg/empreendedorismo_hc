@@ -3,9 +3,11 @@ load_dotenv()
 
 from flask import Flask, render_template, request, jsonify
 from auth import autenticar_usuario
-
+from config import Config # <-- Importe sua classe de configuração
 
 app = Flask(__name__)
+app.config.from_object(Config)
+
 
 @app.route("/", methods=['GET'])
 def home_login():
