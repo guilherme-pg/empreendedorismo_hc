@@ -14,7 +14,7 @@ def home_login():
     return render_template("home_login.html")
 
 @app.route("/home", methods=['POST'])
-def login_form():
+def home():
     usuario = request.form.get("usuario")
     senha = request.form.get("senha")
     role = request.form.get("role")
