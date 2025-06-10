@@ -1,6 +1,6 @@
-flask
+flask>=2.0.0
 pymongo
 werkzeug
 dotenv
-gunicorn
+gunicorn==20.1.0
 dnspython

@@ -3,9 +3,9 @@ services:
     name: flask-app
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app --timeout 60 --workers 2
     envVars:
       - key: FLASK_ENV
         value: production
       - key: MONGO_URI
-        value: your-mongo-uri-here
+        value: mongodb+srv://recon:wDydgBlqUNrjrVDr@cluster0.h4ntq3p.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
