@@ -15,10 +15,15 @@ def home_login():
 
 @app.route("/home", methods=['POST'])
 def home():
+    # Captura os dados do formulário
     usuario = request.form.get("usuario")
     senha = request.form.get("senha")
     role = request.form.get("role")
 
+    # Adicione o print para depurar os dados recebidos
+    print(f"Dados recebidos - Usuário: {usuario}, Senha: {senha}, Role: {role}")
+
+    # Autenticação
     if autenticar_usuario(usuario, senha, role):
         if role == "residente":
             return render_template("home_residente.html")
@@ -26,9 +31,9 @@ def home():
             return render_template("home_professor.html")
         elif role == "gestor":
             return render_template("home_gestor.html")
-    # Caso falhe a autenticação, renderiza novamente a página de login e passa a mensagem de erro
-    return render_template("home_login.html", error_message="Verifique suas credenciais!")
 
+    # Caso falhe a autenticação, renderiza novamente a página de login com mensagem de erro
+    return render_template("home_login.html", error_message="Verifique suas credenciais!")
 
 
 @app.route("/home_residente",  methods=['GET'])

@@ -1,12 +1,13 @@
 from dbconnection import usuarios
-from werkzeug.security import generate_password_hash, check_password_hash
 
 def autenticar_usuario(usuario, senha, role):
-    user = usuarios.find_one({"usuario": usuario})
-    if not user:
-        return False
-    #if not check_password_hash(user["senha"], senha):
-    #    return False
-    if user["role"] != role:
-        return False
-    return True
+    # Buscar usuário com as credenciais fornecidas
+    usuario_encontrado = usuarios.find_one({
+        "usuario": usuario,
+        "senha": senha,
+        "role": role
+    })
+    
+    # Debug: Mostra o resultado da busca
+    print(f"Resultado da busca: {usuario_encontrado}")
+    return usuario_encontrado is not None
