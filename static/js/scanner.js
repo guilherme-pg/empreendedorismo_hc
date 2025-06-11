@@ -1,40 +1,38 @@
-  let html5QrCode;
+  let scanner = null;
 
   function startScanner() {
     document.getElementById("scanner-modal").style.display = "flex";
-    html5QrCode = new Html5Qrcode("reader");
-    const config = { fps: 10, qrbox: 250 };
 
-    html5QrCode.start(
+    scanner = new Html5Qrcode("reader");
+
+    const config = {
+      fps: 10,
+      qrbox: { width: 250, height: 250 }
+    };
+
+    scanner.start(
       { facingMode: "environment" },
       config,
       qrCodeMessage => {
-        fetch("/registrar_presenca", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ qrcode: qrCodeMessage })
-        })
-        .then(res => res.json())
-        .then(data => {
-          alert(data.message);
-          stopScanner();
-        });
+        alert("QR Code detectado: " + qrCodeMessage);
+        stopScanner();
+      },
+      errorMessage => {
+        console.log("Erro de leitura:", errorMessage);
       }
     ).catch(err => {
-      alert("Erro ao iniciar a câmera.");
-      console.error(err);
-      stopScanner();
+      console.error("Erro ao iniciar scanner:", err);
     });
   }
 
   function stopScanner() {
-    if (html5QrCode) {
-      html5QrCode.stop().then(() => {
-        html5QrCode.clear();
+    if (scanner) {
+      scanner.stop().then(() => {
+        scanner.clear();
+        scanner = null;
         document.getElementById("scanner-modal").style.display = "none";
       }).catch(err => {
-        console.error("Erro ao parar o scanner", err);
-        document.getElementById("scanner-modal").style.display = "none";
+        console.error("Erro ao parar o scanner:", err);
       });
     } else {
       document.getElementById("scanner-modal").style.display = "none";
