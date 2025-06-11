@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="../static/css/base.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/html5-qrcode"></script>
+  <script src="../static/js/scanner.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -33,12 +35,11 @@
   </section>
 
   <section class="acoes">
-    <a href="ponto_residente.html">
-      <div class="acao">
-        <img src="../static/images/icons/schedule.png" alt="Registrar Presença" />
-        <span>Registrar Presença</span>
-      </div>
-    </a>
+    <!-- Registrar Presença -->
+    <div class="acao" onclick="startScanner()">
+      <img src="../static/images/icons/schedule.png" alt="Registrar Presença" />
+      <span>Registrar Presença</span>
+    </div>
     <a href="">
       <div class="acao">
         <img src="../static/images/icons/calendar.png" alt="Rotina Semanal" />
@@ -79,6 +80,13 @@
       </div>
     </div>
   </section>
+
+  <div id="reader">
+    <button onclick="stopScanner()">Fechar</button>
+  </div>
+
+  <div id="result"></div>
+
 </body>
 </html>
 

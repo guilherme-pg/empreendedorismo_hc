@@ -1,222 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registro de Ponto</title>
-  <link rel="stylesheet" href="../static/css/ponto_residente.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
-  <style>
-    /* Estilos para o modal e scanner, podem ser movidos para ponto_residente.css */
-    #qr-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.7);
-      z-index: 999;
-      justify-content: center;
-      align-items: center;
-    }
-    #qr-modal .modal-content {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      position: relative;
-    }
-    #qr-modal .close-button {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 30px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #qr-reader {
-      width: 300px;
-      height: 250px; /* Ajuste a altura conforme necessário */
-      margin: auto;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <title>Registrar Presença</title>
+  <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 <body>
-  <header class="header">
-    <h1>Registro de Ponto</h1>
-  </header>
+  <h1>Registrar Presença</h1>
 
-  <section class="perfil">
-    <div class="info">
-      <h2>Dr. Ana Silva</h2>
-      <p>Residente – Clínica Médica</p>
-      <p>Hospital Universitário<br>Unidade Central</p>
-    </div>
-    <div class="id-info">
-      <p>ID: 23456</p>
-      <p>Turno: Diurno</p>
-    </div>
-  </section>
-
-  <section class="registro-central">
-    <p class="data">Segunda-feira, 15 de Abril de 2024</p>
-    <h1 class="relogio">00:00:00</h1>
-    <div class="registro-botao" onclick="abrirLeitorQR()">
-      <img src="../static/images/icons/fingerprint-icon.svg" alt="Registrar" />
-      <p>Toque para registrar entrada via QR Code</p>
-    </div>
-  </section>
-
-  <section class="registros">
-    <h3>Registros Recentes</h3>
-    <div class="registro-item">
-      <strong>Entrada</strong>
-      <p>Hoje, 07:15</p>
-    </div>
-    <div class="registro-item">
-      <strong>Saída</strong>
-      <p>Ontem, 10:45</p>
-    </div>
-    <div class="registro-item">
-      <strong>Entrada</strong>
-      <p>—</p>
-    </div>
-  </section>
-
-  <div id="qr-modal" class="scanner-modal">
-    <div class="modal-content">
-      <span class="close-button" onclick="fecharQR()">&times;</span>
-      <h2>Escaneie o QR do professor</h2>
-      <div id="qr-reader"></div>
-      <p id="qrStatus" style="margin-top: 10px;"></p>
-      <button onclick="fecharQR()">Cancelar</button>
-    </div>
-  </div>
+  <button onclick="startScanner()">Abrir Câmera</button>
+  <div id="reader" style="width: 300px; margin-top: 20px;"></div>
+  <div id="result"></div>
 
   <script>
-    let html5QrCodeScanner; // Variável para controlar o scanner
+    function startScanner() {
+      const html5QrCode = new Html5Qrcode("reader");
 
-    function abrirLeitorQR() {
-      document.getElementById('qr-modal').style.display = 'flex';
-      startQrCodeScanner();
-    }
+      const config = { fps: 10, qrbox: 250 };
 
-    function fecharQR() {
-      stopQrCodeScanner();
-      document.getElementById('qr-modal').style.display = 'none';
-    }
+      html5QrCode.start(
+        { facingMode: "environment" }, // câmera traseira
+        config,
+        qrCodeMessage => {
+          document.getElementById("result").innerText = `Código detectado: ${qrCodeMessage}`;
 
-    function startQrCodeScanner() {
-      const qrCodeConfig = {
-        fps: 10,
-        qrbox: { width: 250, height: 250 },
-        facingMode: 'environment'
-      };
-
-      if (html5QrCodeScanner) {
-        html5QrCodeScanner.stop().catch(err => console.error("Erro ao parar scanner existente:", err));
-      }
-
-      html5QrCodeScanner = new Html5QrcodeScanner(
-        "qr-reader", // ID do elemento HTML
-        qrCodeConfig,
-        false // verbose
-      );
-
-      html5QrCodeScanner.render(onScanSuccess, onScanError);
-      document.getElementById('qrStatus').textContent = "Aguardando leitura do QR Code...";
-    }
-
-    function stopQrCodeScanner() {
-      if (html5QrCodeScanner && html5QrCodeScanner.isScanning) {
-        html5QrCodeScanner.stop().then(() => {
-          console.log("Scanner parado.");
-        }).catch(err => {
-          console.error("Erro ao parar scanner:", err);
-        });
-      }
-      document.getElementById('qrStatus').textContent = "";
-    }
-
-    async function onScanSuccess(decodedText, decodedResult) {
-      console.log(`QR Code lido: ${decodedText}`);
-      document.getElementById('qrStatus').textContent = `QR Code lido: ${decodedText}. Enviando...`;
-      stopQrCodeScanner();
-      fecharQR(); // Fecha o modal após a leitura
-
-      try {
-        const response = await fetch('/registrar_presenca_qr', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ qr_data: decodedText }),
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          Swal.fire({
-            icon: 'success',
-            title: 'Presença Registrada!',
-            text: data.message,
-            confirmButtonText: 'Ok'
+          // Envie para o servidor se desejar
+          fetch("/registrar_presenca", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ qrcode: qrCodeMessage })
+          }).then(res => res.json()).then(data => {
+            alert(data.message);
+            html5QrCode.stop(); // para a câmera após a leitura
           });
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Erro no Registro',
-            text: data.message,
-            confirmButtonText: 'Ok'
-          });
+        },
+        errorMessage => {
+          // erros de leitura podem ser ignorados ou logados
         }
-      } catch (error) {
-        console.error('Erro ao enviar dados para o servidor:', error);
-        Swal.fire({
-          icon: 'error',
-          title: 'Erro de Conexão',
-          text: 'Não foi possível conectar ao servidor para registrar a presença.',
-          confirmButtonText: 'Ok'
-        });
-      }
+      ).catch(err => {
+        console.error("Erro ao iniciar o scanner", err);
+      });
     }
-
-    function onScanError(errorMessage) {
-      document.getElementById('qrStatus').textContent = `Erro: ${errorMessage}. Verifique permissões da câmera.`;
-    }
-
-    // Opcional: Fechar modal ao clicar fora
-    window.addEventListener('click', function(event) {
-      const qrModal = document.getElementById('qr-modal');
-      if (event.target == qrModal) {
-        fecharQR();
-      }
-    });
-
-    // Remova a linha abaixo se você planeja usar o script.js para outras coisas
-    // e o código do relógio já está lá. Se não, adicione o código do relógio aqui.
-    // O código do relógio não foi incluído neste snippet, pois o foco é o QR.
-    // No seu arquivo original ponto_residente.html, o relógio está em um script separado.
-    // Certifique-se de que ele funcione junto com esta nova funcionalidade.
-
-    // Exemplo de atualização do relógio, se necessário
-    /*
-    function updateClock() {
-        const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        document.querySelector('.relogio').textContent = `${hours}:${minutes}:${seconds}`;
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.querySelector('.data').textContent = now.toLocaleDateString('pt-BR', options);
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-    */
-
   </script>
-  </body>
+</body>
 </html>

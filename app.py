@@ -51,9 +51,15 @@ def avisos():
     return render_template("avisos.html")
 
 
-@app.route("/ponto_residente",  methods=['GET'])
-def ponto_residente():
-    return render_template("ponto_residente.html")
+@app.route("/registrar_presenca", methods=["POST"])
+def registrar_presenca():
+    data = request.get_json()
+    qr_code = data.get("qrcode")
+
+    # Aqui você pode validar e registrar o QR code
+    print(f"QR Code recebido: {qr_code}")
+
+    return jsonify({"message": "Presença registrada com sucesso!"})
 
 
 @app.route("/controle_de_residentes",  methods=['GET'])
