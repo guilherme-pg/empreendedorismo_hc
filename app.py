@@ -48,7 +48,11 @@ def home_professor():
 
 @app.route("/avisos",  methods=['GET'])
 def avisos():
-    return render_template("avisos.html")
+    return render_template("avisos_residente.html")
+
+@app.route("/notas", methods=["GET"])
+def notas():
+    return render_template("notas_residentes.html")
 
 
 @app.route("/registrar_presenca", methods=["POST"])

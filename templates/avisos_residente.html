@@ -9,7 +9,7 @@
 </head>
 <body>
   <header class="header">
-    <a href="{{ url_for('home_login') }}">
+    <a href="{{ url_for('home_residente') }}">
       <div class="header-left">
         <img src="home-icon.svg" alt="Início" class="icon"/>
         <span>Início</span>
@@ -24,9 +24,9 @@
 
   <section class="perfil">
     <div class="info">
-      <h2>Professor Dr. Fúvio Sherpack</h2>
-      <p>Cirurgião Cardiovascular</p>
-      <p>Hospital das Clínicas<br>UTI Coronária</p>
+      <h2>Dr. Claudio Monteiro</h2>
+      <p>Residente - Cirurgia Cardiovascular</p>
+      <p>Hospital das Clínicas<br/>UTI Coronária</p>
     </div>
     <div class="id-info">
       <p>ID: 03223</p>
@@ -36,6 +36,7 @@
 
   <section class="avisos">
     <p class="data">Segunda-feira, 21 de Abril de 2025</p>
+
     <div class="bloco">
       <p><span class="emoji">⚠️</span> <strong>Comunicado Importante</strong></p>
       <p>
@@ -44,6 +45,7 @@
         Pedimos que todos finalizem seus registros até as 21h45.
       </p>
     </div>
+
     <div class="bloco">
       <p><span class="emoji">📅</span> <strong>Próximos Eventos:</strong></p>
       <ul>
@@ -51,22 +53,30 @@
         <li>20/05 – Palestra: Cuidados Paliativos e Humanização (Sala 301)</li>
       </ul>
     </div>
-  </section>
 
-  <section class="registros">
-    <div class="registros-header">
-      <h3>Registros recentes de residentes</h3>
-      <a href="#">Visualizar Histórico</a>
+    <div class="bloco">
+      <p><span class="emoji">🧪</span> <strong>Nova Diretriz de Higienização</strong></p>
+      <p>
+        A partir de 22/04/2025, todos os residentes devem utilizar o novo protocolo<br>
+        de higienização das mãos antes e após atendimento. Consulte a cartilha afixada<br>
+        nos murais dos corredores e na intranet.
+      </p>
     </div>
-    <div class="registros-conteudo">
-      <div class="registro">
-        <strong>18/04/2025<br>Dr. Claudio Monteiro</strong>
-        <p>Entrada: 07:00<br>Saída: 11:10<br>Entrada: 12:10<br>Saída: 17:00</p>
-      </div>
-      <div class="registro">
-        <strong>18/04/2025<br>Dra. Carla Silva</strong>
-        <p>Entrada: 07:20<br>Saída: 11:30<br>Entrada: 12:30<br>Saída: 17:40</p>
-      </div>
+
+    <div class="bloco">
+      <p><span class="emoji">🕒</span> <strong>Alteração na Rotina de Plantão</strong></p>
+      <p>
+        Durante o mês de maio, os plantões de sábado terão início às 06h em vez de 07h.<br>
+        Essa mudança é válida apenas para os residentes da UTI e será reavaliada em junho.
+      </p>
+    </div>
+
+    <div class="bloco">
+      <p><span class="emoji">📢</span> <strong>Feedbacks Disponíveis</strong></p>
+      <p>
+        Os formulários de avaliação dos residentes já estão disponíveis para os professores.<br>
+        O prazo para preenchimento é até o dia 28/04/2025.
+      </p>
     </div>
   </section>
 </body>
