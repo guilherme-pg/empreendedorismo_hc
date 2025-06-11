@@ -3,47 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Notas dos Residentes</title>
+  <title>Avaliações</title>
+  <link rel="stylesheet" href="../static/css/base.css" />
   <link rel="stylesheet" href="../static/css/notas_residentes.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-    <a href="{{ url_for('home_residente') }}">← Início</a>
-    <h1>Avaliações</h1>
+  <header class="topbar">
+    <h1>Portal do Residente</h1>
+    <div class="icons">
+      <img src="notificacao-icon.svg" alt="Notificação" />
+      <img src="ajuda-icon.svg" alt="Ajuda" />
+      <form action="/" method="get">
+        <button type="submit" class="sair-btn">Sair</button>
+      </form>
+    </div>
   </header>
 
-  <section class="notas">
+  <section class="perfil">
+    <div class="info">
+      <h2>Dr. Claudio Monteiro</h2>
+      <p>Residente - Cirurgia Cardiovascular</p>
+      <p>Hospital das Clínicas<br/>UTI Coronária</p>
+    </div>
+    <div class="id-info">
+      <p>ID: 03223</p>
+      <p>Turno: Diurno</p>
+    </div>
+  </section>
 
-    <!-- Avaliado 1 -->
-    <div class="avaliado">
-      <strong>Dr. Claudio Monteiro</strong>
-
-      <div class="nota">
-        <div class="info">Avaliado por: Prof. Dr. Fúvio Sherpack | Data: 15/04/2025</div>
-        <div class="comentario">
-          Excelente desempenho na realização de procedimentos cirúrgicos.<br/>
-          Demonstrou ótimo raciocínio clínico e liderança na equipe.
-        </div>
-      </div>
-
-      <div class="nota">
-        <div class="info">Avaliado por: Profª. Dra. Ana Pereira | Data: 16/04/2025</div>
-        <div class="comentario">
-          Necessita melhorar a documentação dos casos clínicos.<br/>
-          Recomendado foco no atendimento humanizado.
-        </div>
-      </div>
-
-      <div class="nota">
-        <div class="info">Avaliado por: Prof. Dr. Luiz Moreira | Data: 17/04/2025</div>
-        <div class="comentario">
-          Apresentou grande evolução na interpretação de exames laboratoriais.<br/>
-          Continue com o empenho e participação nas discussões.
-        </div>
-      </div>
+  <section class="registros">
+    <div class="titulo-registros">
+      <h3>Avaliações Recentes</h3>
+      <a href="{{ url_for('home_residente') }}" class="historico">← Voltar ao Início</a>
     </div>
 
+    <div class="tabela">
+      <div class="registro">
+        <p><strong>Avaliado por: Prof. Dr. Fúvio Sherpack</strong><br>Data: 15/04/2025</p>
+        <p>Excelente desempenho na realização de procedimentos cirúrgicos.<br>
+        Demonstrou ótimo raciocínio clínico e liderança na equipe.</p>
+      </div>
+
+      <div class="registro">
+        <p><strong>Avaliado por: Profª. Dra. Ana Pereira</strong><br>Data: 16/04/2025</p>
+        <p>Necessita melhorar a documentação dos casos clínicos.<br>
+        Recomendado foco no atendimento humanizado.</p>
+      </div>
+
+      <div class="registro">
+        <p><strong>Avaliado por: Prof. Dr. Luiz Moreira</strong><br>Data: 17/04/2025</p>
+        <p>Apresentou grande evolução na interpretação de exames laboratoriais.<br>
+        Continue com o empenho e participação nas discussões.</p>
+      </div>
+    </div>
   </section>
 </body>
 </html>

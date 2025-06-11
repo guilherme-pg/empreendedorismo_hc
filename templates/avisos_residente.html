@@ -4,21 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Avisos</title>
+  <link rel="stylesheet" href="../static/css/base.css" />
   <link rel="stylesheet" href="../static/css/avisos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <header class="header">
-    <a href="{{ url_for('home_residente') }}">
-      <div class="header-left">
-        <img src="home-icon.svg" alt="Início" class="icon"/>
-        <span>Início</span>
-      </div>
-    </a>
-    <h1>Avisos</h1>
-    <div class="header-right">
-      <img src="note-icon.svg" alt="Notas" class="icon"/>
-      <img src="bell-icon.svg" alt="Avisos" class="icon"/>
+  <header class="topbar">
+    <h1>Portal do Residente</h1>
+    <div class="icons">
+      <img src="notificacao-icon.svg" alt="Notificação" />
+      <img src="ajuda-icon.svg" alt="Ajuda" />
+      <form action="/" method="get">
+        <button type="submit" class="sair-btn">Sair</button>
+      </form>
     </div>
   </header>
 
@@ -34,45 +32,46 @@
     </div>
   </section>
 
-  <section class="avisos">
-    <p class="data">Segunda-feira, 21 de Abril de 2025</p>
+  <section class="registros">
+    <div class="registros-header">
+      <h3>Avisos Recentes</h3>
+      <p class="data">Segunda-feira, 21 de Abril de 2025</p>
+    </div>
 
-    <div class="bloco">
-      <p><span class="emoji">⚠️</span> <strong>Comunicado Importante</strong></p>
+    <div class="registro">
+      <p><strong>⚠️ Comunicado Importante</strong></p>
       <p>
-        Informamos que o registro de presença estará indisponível<br>
-        hoje das 22h às 23h para manutenção.<br>
+        Informamos que o registro de presença estará indisponível hoje das 22h às 23h para manutenção.<br>
         Pedimos que todos finalizem seus registros até as 21h45.
       </p>
     </div>
 
-    <div class="bloco">
-      <p><span class="emoji">📅</span> <strong>Próximos Eventos:</strong></p>
+    <div class="registro">
+      <p><strong>📅 Próximos Eventos:</strong></p>
       <ul>
         <li>15/05 – Workshop de Atualização em Emergências Médicas (Auditório 2)</li>
         <li>20/05 – Palestra: Cuidados Paliativos e Humanização (Sala 301)</li>
       </ul>
     </div>
 
-    <div class="bloco">
-      <p><span class="emoji">🧪</span> <strong>Nova Diretriz de Higienização</strong></p>
+    <div class="registro">
+      <p><strong>🧪 Nova Diretriz de Higienização</strong></p>
       <p>
-        A partir de 22/04/2025, todos os residentes devem utilizar o novo protocolo<br>
-        de higienização das mãos antes e após atendimento. Consulte a cartilha afixada<br>
-        nos murais dos corredores e na intranet.
+        A partir de 22/04/2025, todos os residentes devem utilizar o novo protocolo de higienização das mãos antes e após atendimento.<br>
+        Consulte a cartilha afixada nos murais dos corredores e na intranet.
       </p>
     </div>
 
-    <div class="bloco">
-      <p><span class="emoji">🕒</span> <strong>Alteração na Rotina de Plantão</strong></p>
+    <div class="registro">
+      <p><strong>🕒 Alteração na Rotina de Plantão</strong></p>
       <p>
         Durante o mês de maio, os plantões de sábado terão início às 06h em vez de 07h.<br>
         Essa mudança é válida apenas para os residentes da UTI e será reavaliada em junho.
       </p>
     </div>
 
-    <div class="bloco">
-      <p><span class="emoji">📢</span> <strong>Feedbacks Disponíveis</strong></p>
+    <div class="registro">
+      <p><strong>📢 Feedbacks Disponíveis</strong></p>
       <p>
         Os formulários de avaliação dos residentes já estão disponíveis para os professores.<br>
         O prazo para preenchimento é até o dia 28/04/2025.
