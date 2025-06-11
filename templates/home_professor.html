@@ -11,14 +11,36 @@
 <body>
   <header class="topbar">
     <h1>Portal do Professor</h1>
-    <div class="icons">
-      <img src="notificacao-icon.svg" alt="Notificação" />
-      <img src="ajuda-icon.svg" alt="Ajuda" />
-      <form action="/" method="get">
-        <button type="submit" class="sair-btn">Sair</button>
-      </form>
-    </div>
+      <div class="icons">
+
+        <img src="../static/images/icons/msg.png" alt="Mensagens" class="icon-btn" id="msg-btn" />
+        <img src="../static/images/icons/bell.png" alt="Notificações" class="icon-btn" id="noti-btn" />
+
+        <form action="/" method="get">
+          <button type="submit" class="sair-btn">Sair</button>
+        </form>
+      </div>
   </header>
+
+  <div class="fixed-popup" id="msg-popup">
+  <div class="popup-header">
+    <span>Mensagens</span>
+    <button class="close-popup" data-target="msg-popup">×</button>
+  </div>
+  <div class="popup-body">
+    <p>Você não tem mensagens novas.</p>
+  </div>
+</div>
+
+  <div class="fixed-popup" id="noti-popup">
+    <div class="popup-header">
+      <span>Notificações</span>
+      <button class="close-popup" data-target="noti-popup">×</button>
+    </div>
+    <div class="popup-body">
+      <p>Sem novas notificações.</p>
+    </div>
+  </div>
 
   <section class="perfil">
     <div class="info">
@@ -71,5 +93,7 @@
       </div>
     </div>
   </section>
+<script src="../static/js/script.js"></script>
+
 </body>
 </html>
