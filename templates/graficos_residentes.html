@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gráficos dos Residentes</title>
+<link rel="stylesheet" href="../static/css/base.css">
+<link rel="stylesheet" href="../static/css/graficos.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Estatísticas dos Residentes</h1>
+      <div class="icons">
+
+        <img src="../static/images/icons/msg.png" alt="Mensagens" class="icon-btn" id="msg-btn" />
+        <img src="../static/images/icons/bell.png" alt="Notificações" class="icon-btn" id="noti-btn" />
+
+        <form action="/" method="get">
+          <button type="submit" class="sair-btn">Sair</button>
+        </form>
+      </div>
+  </header>
+
+  <div class="fixed-popup" id="msg-popup">
+  <div class="popup-header">
+    <span>Mensagens</span>
+    <button class="close-popup" data-target="msg-popup">×</button>
+  </div>
+  <div class="popup-body">
+    <p>Você não tem mensagens novas.</p>
+  </div>
+</div>
+
+  <div class="fixed-popup" id="noti-popup">
+    <div class="popup-header">
+      <span>Notificações</span>
+      <button class="close-popup" data-target="noti-popup">×</button>
+    </div>
+    <div class="popup-body">
+      <p>Sem novas notificações.</p>
+    </div>
+  </div>
+
+    <div class="registros-header">
+      <p></p>
+      <a href="{{ url_for('home_gestor') }}" class="historico">← Voltar ao Início</a>
+    </div>
+
+
+  <div class="graficos-container">
+    <div class="grafico">
+      <div class="titulo"><h2>Frequência Mensal</h2></div>
+      <canvas id="frequenciaChart"></canvas>
+    </div>
+
+    <div class="grafico">
+      <div class="titulo"><h2>Média de Avaliações</h2></div>
+      <canvas id="avaliacoesChart"></canvas>
+    </div>
+
+    <div class="grafico">
+      <div class="titulo"><h2>Carga Horária Total (horas)</h2></div>
+      <canvas id="horasChart"></canvas>
+    </div>
+  </div>
+
+<script src="../static/js/graficos.js"></script>
+</body>
+</html>

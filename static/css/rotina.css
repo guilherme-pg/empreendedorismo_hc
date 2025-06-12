@@ -1,0 +1,52 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f7;
+  padding: 0 16px;
+  color: #333;
+}
+
+.topbar {
+  background: #003366;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.topbar .historico {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.tabela-rotina {
+  background: white;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #e9f1fb;
+}
+
+th, td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  color: #003366;
+}

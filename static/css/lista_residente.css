@@ -163,3 +163,17 @@ th {
     flex-direction: column;
   }
 }
+
+.historico {
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.residents-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}

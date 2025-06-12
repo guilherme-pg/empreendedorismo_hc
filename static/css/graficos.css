@@ -1,0 +1,31 @@
+.graficos-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.grafico {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+canvas {
+  max-width: 100%;
+}
+
+.titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.historico {
+  color: #003366;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}

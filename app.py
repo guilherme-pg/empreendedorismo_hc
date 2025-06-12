@@ -45,10 +45,18 @@ def home_residente():
 def home_professor():
     return render_template("home_professor.html")
 
+@app.route("/home_gestor", methods=['GET'])
+def home_gestor():
+    return render_template("home_gestor.html")
 
-@app.route("/avisos",  methods=['GET'])
-def avisos():
+
+@app.route("/avisos_residente",  methods=['GET'])
+def avisos_residente():
     return render_template("avisos_residente.html")
+
+@app.route("/avisos_professor", methods=["GET"])
+def avisos_professor():
+    return render_template("avisos_professor.html")
 
 @app.route("/notas", methods=["GET"])
 def notas():
@@ -65,6 +73,9 @@ def registrar_presenca():
 
     return jsonify({"message": "Presença registrada com sucesso!"})
 
+@app.route('/graficos', methods=["GET"])
+def graficos():
+    return render_template('graficos_residentes.html')
 
 @app.route("/controle_de_residentes",  methods=['GET'])
 def controle_de_residentes():
@@ -73,6 +84,18 @@ def controle_de_residentes():
 @app.route("/lista_residentes",  methods=['GET'])
 def lista_residentes():
     return render_template("lista_residentes.html")
+
+@app.route("/lista_residentes_gestor",  methods=['GET'])
+def lista_residentes_gestor():
+    return render_template("lista_residentes_gestor.html")
+
+@app.route("/rotina_professor", methods=['GET'])
+def rotina_professor():
+    return render_template("rotina_professor.html")
+
+@app.route("/rotina_residente", methods=['GET'])
+def rotina_residente():
+    return render_template("rotina_residente.html")
 
 
 if __name__ == '__main__':

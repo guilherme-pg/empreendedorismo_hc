@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rotina do Residente</title>
+  <link rel="stylesheet" href="../static/css/base.css" />
+  <link rel="stylesheet" href="../static/css/rotina.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Rotina Semanal - Residente</h1>
+      <div class="icons">
+
+        <img src="../static/images/icons/msg.png" alt="Mensagens" class="icon-btn" id="msg-btn" />
+        <img src="../static/images/icons/bell.png" alt="Notificações" class="icon-btn" id="noti-btn" />
+
+        <form action="/" method="get">
+          <button type="submit" class="sair-btn">Sair</button>
+        </form>
+      </div>
+  </header>
+
+  <div class="fixed-popup" id="msg-popup">
+  <div class="popup-header">
+    <span>Mensagens</span>
+    <button class="close-popup" data-target="msg-popup">×</button>
+  </div>
+  <div class="popup-body">
+    <p>Você não tem mensagens novas.</p>
+  </div>
+</div>
+
+  <div class="fixed-popup" id="noti-popup">
+    <div class="popup-header">
+      <span>Notificações</span>
+      <button class="close-popup" data-target="noti-popup">×</button>
+    </div>
+    <div class="popup-body">
+      <p>Sem novas notificações.</p>
+    </div>
+  </div>
+
+    <div class="residents-header">
+      <h3></h3>
+      <a href="{{ url_for('home_residente') }}" class="historico">← Voltar ao Início</a>
+    </div>
+
+
+  <section class="tabela-rotina">
+    <table>
+      <thead>
+        <tr>
+          <th>Dia</th>
+          <th>Atividade</th>
+          <th>Horário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Segunda</td><td>Plantão</td><td>07:00 - 17:00</td></tr>
+        <tr><td>Terça</td><td>Estudo de Casos</td><td>08:00 - 12:00</td></tr>
+        <tr><td>Quarta</td><td>Ambulatório</td><td>13:00 - 17:00</td></tr>
+        <tr><td>Quinta</td><td>Centro Cirúrgico</td><td>07:00 - 14:00</td></tr>
+        <tr><td>Sexta</td><td>Avaliação Clínica</td><td>09:00 - 12:00</td></tr>
+      </tbody>
+    </table>
+  </section>
+</body>
+</html>
