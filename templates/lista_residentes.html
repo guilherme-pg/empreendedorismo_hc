@@ -5,22 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lista de Residentes</title>
   <link rel="stylesheet" href="../static/css/lista_residente.css" />
+  <link rel="stylesheet" href="../static/css/base.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
-  <header class="header">
-    <a href="{{ url_for('home_professor') }}">
-      <div class="header-left">
-        <img src="home-icon.svg" alt="Início" class="icon"/>
-        <span>Início</span>
-      </div>
-    </a>
+  <header class="topbar">
     <h1>Lista de Residentes</h1>
-    <div class="header-right">
-      <img src="note-icon.svg" alt="Notas" class="icon"/>
-      <img src="bell-icon.svg" alt="Avisos" class="icon"/>
-    </div>
+      <div class="icons">
+
+        <img src="../static/images/icons/msg.png" alt="Mensagens" class="icon-btn" id="msg-btn" />
+        <img src="../static/images/icons/bell.png" alt="Notificações" class="icon-btn" id="noti-btn" />
+
+        <form action="/" method="get">
+          <button type="submit" class="sair-btn">Sair</button>
+        </form>
+      </div>
   </header>
+
+  <div class="fixed-popup" id="msg-popup">
+  <div class="popup-header">
+    <span>Mensagens</span>
+    <button class="close-popup" data-target="msg-popup">×</button>
+  </div>
+  <div class="popup-body">
+    <p>Você não tem mensagens novas.</p>
+  </div>
+</div>
+
+  <div class="fixed-popup" id="noti-popup">
+    <div class="popup-header">
+      <span>Notificações</span>
+      <button class="close-popup" data-target="noti-popup">×</button>
+    </div>
+    <div class="popup-body">
+      <p>Sem novas notificações.</p>
+    </div>
+  </div>
 
   <section class="perfil">
     <div class="info">
@@ -55,25 +75,40 @@
           <td>Cirurgia Cardiovascular</td>
           <td>Ativo</td>
         </tr>
+        <tr>
+          <td>Dr. Lucas Almeida</td>
+          <td>Cardiologia</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Dra. Fernanda Costa</td>
+          <td>Clínica Médica</td>
+          <td>Inativo</td>
+        </tr>
+        <tr>
+          <td>Dr. João Pedro Rocha</td>
+          <td>Neurologia</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Dra. Mariana Teixeira</td>
+          <td>Ortopedia</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Dr. Rafael Lima</td>
+          <td>Cirurgia Geral</td>
+          <td>Ativo</td>
+        </tr>
+        <tr>
+          <td>Dra. Beatriz Nogueira</td>
+          <td>Ginecologia</td>
+          <td>Inativo</td>
+        </tr>
       </tbody>
     </table>
   </section>
 
-  <section class="registros">
-    <div class="registros-header">
-      <h3>Registros recentes de residentes</h3>
-      <a href="#">Visualizar Histórico</a>
-    </div>
-    <div class="registros-conteudo">
-      <div class="registro">
-        <strong>18/04/2025<br>Dr. Claudio Monteiro</strong>
-        <p>Entrada: 07:00<br>Saída: 11:10<br>Entrada: 12:10<br>Saída: 17:00</p>
-      </div>
-      <div class="registro">
-        <strong>18/04/2025<br>Dra. Carla Silva</strong>
-        <p>Entrada: 07:20<br>Saída: 11:30<br>Entrada: 12:30<br>Saída: 17:40</p>
-      </div>
-    </div>
-  </section>
+  <script src="../static/js/script.js"></script>
 </body>
 </html>
